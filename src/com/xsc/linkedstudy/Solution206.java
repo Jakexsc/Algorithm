@@ -8,12 +8,19 @@ package com.xsc.linkedstudy;
  */
 public class Solution206 {
     public static ListNode reverseList(ListNode head) {
+        // 上一个节点
         ListNode prev = null;
+        // 当前节点
         ListNode cur = head;
+        // 如果当前节点不等于空
         while(cur != null) {
+            // 保存当前节点的下一个节点的数据
             ListNode temp = cur.next;
+            // 改变节点方向
             cur.next = prev;
+            // 保存上一个节点为本地节点
             prev = cur;
+            // 把数据恢复
             cur = temp;
         }
         return prev;
