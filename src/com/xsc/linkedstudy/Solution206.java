@@ -1,7 +1,7 @@
 package com.xsc.linkedstudy;
 
 /**
- * 反转链表 LeeCode206
+ * 反转链表 LeetCode206
  *
  * @author Jakexsc
  * @date : 2020-09-11 16:06
