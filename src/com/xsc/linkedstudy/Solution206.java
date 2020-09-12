@@ -1,19 +1,25 @@
 package com.xsc.linkedstudy;
 
 /**
- * 反转链表 LeetCode206
+ * LeetCode206
  *
  * @author Jakexsc
  * @date : 2020-09-11 16:06
  */
 public class Solution206 {
+    /**
+     * 反转链表
+     *
+     * @param head 头节点
+     * @return ListNode 反转之后的链表
+     */
     public static ListNode reverseList(ListNode head) {
         // 上一个节点
         ListNode prev = null;
         // 当前节点
         ListNode cur = head;
         // 如果当前节点不等于空
-        while(cur != null) {
+        while (cur != null) {
             // 保存当前节点的下一个节点的数据
             ListNode temp = cur.next;
             // 改变节点方向

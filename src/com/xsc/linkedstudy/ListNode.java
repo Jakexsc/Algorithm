@@ -21,4 +21,7 @@ public class ListNode {
                 ", next=" + next +
                 '}';
     }
+
+    public ListNode() {
+    }
 }

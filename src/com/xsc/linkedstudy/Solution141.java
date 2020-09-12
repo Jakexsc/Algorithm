@@ -1,12 +1,18 @@
 package com.xsc.linkedstudy;
 
 /**
- * LeetCode141 判断链表是否存在环 -> 快慢节点碰头则存在
+ * LeetCode141
  *
  * @author Jakexsc
  * @date : 2020-09-11 20:28
  */
 public class Solution141 {
+    /**
+     * 判断链表是否存在环 -> 快慢节点碰头则存在
+     *
+     * @param head 头节点
+     * @return boolean
+     */
     public static boolean hasCycle(ListNode head) {
         // 如果它为空,或者下一个节点为空，它构不成环
         if (head == null || head.next == null) {
@@ -17,7 +23,7 @@ public class Solution141 {
         // 走两步节点
         ListNode fast = head.next;
         // 如果它们没碰到
-        while(slow != fast) {
+        while (slow != fast) {
             // 走两步肯定会先碰到null值，如果它等于空或者下一个节点等于空，它构不成环
             if (fast == null || fast.next == null) {
                 return false;
