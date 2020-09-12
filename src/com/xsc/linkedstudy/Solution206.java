@@ -22,7 +22,7 @@ public class Solution206 {
         while (cur != null) {
             // 保存当前节点的下一个节点的数据
             ListNode temp = cur.next;
-            // 改变节点方向
+            // 指针指向上一个节点
             cur.next = prev;
             // 保存上一个节点为本地节点
             prev = cur;
