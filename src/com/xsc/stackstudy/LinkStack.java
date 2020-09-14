@@ -20,6 +20,14 @@ public class LinkStack {
         public Node(Object val) {
             this.val = val;
         }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "val=" + val +
+                    ", next=" + next +
+                    '}';
+        }
     }
 
     /**
@@ -27,10 +35,11 @@ public class LinkStack {
      *
      * @param value 入栈的值
      */
-    public void push(Object value) {
+    public Boolean push(Object value) {
         Node node = new Node(value);
         node.next = cur;
         cur = node;
+        return true;
     }
 
     /**
@@ -48,5 +57,26 @@ public class LinkStack {
         // 指针指向下一个
         cur = cur.next;
         return val;
+    }
+
+    @Override
+    public String toString() {
+        return "LinkStack{" +
+                "cur=" + cur +
+                '}';
+    }
+
+    public static void main(String[] args) {
+        LinkStack linkStack = new LinkStack();
+        linkStack.push(1);
+        System.out.println(linkStack);
+        linkStack.push(2);
+        System.out.println(linkStack);
+        linkStack.push(3);
+        System.out.println(linkStack);
+        linkStack.pop();
+        System.out.println(linkStack);
+        linkStack.push(4);
+        System.out.println(linkStack);
     }
 }

@@ -1,5 +1,7 @@
 package com.xsc.queuestudy;
 
+import java.util.Arrays;
+
 /**
  * 循环顺序队列
  *
@@ -65,5 +67,31 @@ public class ListQueue {
         // head + 1
         head = (head + 1) % size;
         return item;
+    }
+
+    @Override
+    public String toString() {
+        return "ListQueue{" +
+                "items=" + Arrays.toString(items) +
+                ", size=" + size +
+                ", head=" + head +
+                ", tail=" + tail +
+                '}';
+    }
+
+    public static void main(String[] args) {
+        ListQueue listQueue = new ListQueue(8);
+        for (int i = 1; i <= 7; i++) {
+            System.out.println(listQueue.push("" + i));
+        }
+        System.out.println(listQueue.pop());
+        System.out.println(listQueue.pop());
+        System.out.println(listQueue.push("8"));
+        System.out.println(listQueue.push("9"));
+        System.out.println(listQueue.push("10"));
+        System.out.println(listQueue.pop());
+        System.out.println(listQueue);
+        System.out.println(listQueue.push("10"));
+        System.out.println(listQueue);
     }
 }
