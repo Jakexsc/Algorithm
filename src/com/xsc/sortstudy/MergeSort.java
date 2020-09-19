@@ -20,8 +20,8 @@ public class MergeSort {
     /**
      * 分治递归
      *
-     * @param arr 排序的数组
-     * @param left 左边分区第一个下标
+     * @param arr   排序的数组
+     * @param left  左边分区第一个下标
      * @param right 右边分区第一个下标
      */
     public void mergeSort(int[] arr, int left, int right) {
@@ -41,9 +41,10 @@ public class MergeSort {
 
     /**
      * 并
-     * @param arr 并的数组
-     * @param left 左边分区第一个下标
-     * @param mid 中间下标
+     *
+     * @param arr   并的数组
+     * @param left  左边分区第一个下标
+     * @param mid   中间下标
      * @param right 右边分区第一个下标
      */
     public void merge(int[] arr, int left, int mid, int right) {
