@@ -71,7 +71,7 @@ public class MergeSort {
 
         // 先将虚拟数组的下标移动到第一位
         t = 0;
-        // 先将arr数组的下标移动到第一位
+        // 记录arr左边的下标
         int tempLeft = left;
         // 将虚拟数组的值拷贝到arr数组
         while (tempLeft <= right) {
