@@ -3,7 +3,7 @@ package com.xsc.sortstudy;
 import java.util.Arrays;
 
 /**
- * 快速排序
+ * 快速排序 -> 分治思想
  *
  * @author JakeXsc
  * @version 1.0
@@ -11,6 +11,8 @@ import java.util.Arrays;
  */
 public class QuickSort {
     /**
+     * 分区并排序
+     *
      * @param array      排序的数组
      * @param leftBound  左指针
      * @param rightBound 右指针
