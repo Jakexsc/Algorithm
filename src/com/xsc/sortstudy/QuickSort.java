@@ -30,12 +30,20 @@ public class QuickSort {
         int pivot = array[rightBound];
         // 如果左边的指针大于等于右边的指针，那么不需要交换位置了
         while (left < right) {
-            // 如果左边指针小于右边指针，而且值小于等于中间基数
+            /**
+             * 这里就是找比中间数大的
+             * 如果左边指针小于右边指针，而且值小于等于中间基数则进入循环
+             *
+             */
             while (left < right && array[left] <= pivot) {
                 // 指针移动到下一位
                 left++;
             }
-            // 如果左边指针小于右边指针，而且值大于等于中间基数
+            /**
+             * 这里就是找比中间数小的
+             * 如果左边指针小于右边指针，而且值大于等于中间基数则进入循环
+             */
+            //
             while (left < right && array[right] >= pivot) {
                 right--;
             }
