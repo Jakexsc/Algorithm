@@ -1,4 +1,6 @@
-package com.xsc.linkedstudy;
+package com.xsc.leetcode;
+
+import com.xsc.linkedstudy.ListNode;
 
 /**
  * LeetCode876

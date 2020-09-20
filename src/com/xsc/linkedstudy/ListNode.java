@@ -7,8 +7,8 @@ package com.xsc.linkedstudy;
  * @date : 2020-09-11 18:35
  */
 public class ListNode {
-    int value;
-    ListNode next;
+    public int value;
+    public ListNode next;
 
     public ListNode(int value) {
         this.value = value;

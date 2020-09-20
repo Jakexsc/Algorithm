@@ -1,4 +1,4 @@
-package com.xsc.liststudy;
+package com.xsc.leetcode;
 
 /**
  * LeetCode 剑指Offer 57

@@ -1,4 +1,4 @@
-package com.xsc.liststudy;
+package com.xsc.leetcode;
 
 /**
  * LeetCode34 时间复杂度为O(n) -> 暴力解法
