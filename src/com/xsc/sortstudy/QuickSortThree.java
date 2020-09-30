@@ -19,14 +19,14 @@ public class QuickSortThree {
             return;
         }
         // 获取pivot的下标
-        int mid = radomPartition(arr, p, r);
+        int mid = randomPartition(arr, p, r);
         // 对左边的区域再进行分区
         quickSortTwo(arr, p, mid - 1);
         // 对右边的区域再进行分区
         quickSortTwo(arr, mid + 1, r);
     }
 
-    private static int radomPartition(int[] arr, int p, int r) {
+    private static int randomPartition(int[] arr, int p, int r) {
         int randomPovit = random.nextInt(r - p) + p;
         swap(arr, randomPovit, r);
         return partition(arr, p, r);
