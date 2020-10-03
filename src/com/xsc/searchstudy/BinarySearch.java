@@ -1,12 +1,20 @@
 package com.xsc.searchstudy;
 
 /**
+ * 二分查找 -> 非递归方式
+ *
  * @author JakeXsc
  * @version 1.0
  * @date 2020/10/3 23:38
  */
 public class BinarySearch {
-    public static int bSearch(int[] arr, int n, int value) {
+    /**
+     * @param arr   查找的数组
+     * @param n     数组长度
+     * @param value 查找的值
+     * @return int -> 值的下标
+     */
+    private static int bSearch(int[] arr, int n, int value) {
         // 左边指针
         int low = 0;
         // 右边指针
@@ -22,13 +30,13 @@ public class BinarySearch {
                 // 如果中间值小于我们要的值，证明值在右边区域
             } else if (arr[mid] < value) {
                 low = mid + 1;
-                // // 如果中间值大于我们要的值，证明值在左边区域
+                // 如果中间值大于我们要的值，证明值在左边区域
             } else {
                 high = mid - 1;
             }
         }
         // 没有我们要的值，直接返回-1;
-        return - 1;
+        return -1;
     }
 
     public static void main(String[] args) {
