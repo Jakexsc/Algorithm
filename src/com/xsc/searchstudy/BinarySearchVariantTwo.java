@@ -29,7 +29,7 @@ public class BinarySearchVariantTwo {
             if (arr[mid] < value) {
                 low = mid + 1;
                 // 如果中间值大于我们要的值，证明值在左边区域
-            } else if(arr[mid] > value) {
+            } else if (arr[mid] > value) {
                 high = mid - 1;
                 //如果值相等
             } else {
