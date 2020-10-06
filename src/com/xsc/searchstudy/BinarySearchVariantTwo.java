@@ -7,7 +7,7 @@ package com.xsc.searchstudy;
  * @version 1.0
  * @date 2020/10/6 19:00
  */
-public class BinarySearchLast {
+public class BinarySearchVariantTwo {
     /**
      * 二分查找方法 -> 查找最后一个值等于给定值的元素
      *
@@ -47,6 +47,6 @@ public class BinarySearchLast {
 
     public static void main(String[] args) {
         int[] arr = new int[]{1, 3, 4, 5, 6, 8, 8, 8, 11, 18};
-        System.out.println(BinarySearchLast.lastBinarySearch(arr, arr.length, 8));
+        System.out.println(BinarySearchVariantTwo.lastBinarySearch(arr, arr.length, 8));
     }
 }

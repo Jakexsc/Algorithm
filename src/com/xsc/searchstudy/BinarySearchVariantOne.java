@@ -7,7 +7,7 @@ package com.xsc.searchstudy;
  * @version 1.0
  * @date 2020/10/5 18:16
  */
-public class BinarySearchHead {
+public class BinarySearchVariantOne {
     /**
      * 二分查找方法 -> 查找第一个值等于给定值的元素
      *
@@ -48,6 +48,6 @@ public class BinarySearchHead {
 
     public static void main(String[] args) {
         int[] arr = new int[]{1, 3, 4, 5, 6, 8, 8, 8, 11, 18};
-        System.out.println(BinarySearchHead.headBinarySearch(arr, arr.length, 8));
+        System.out.println(BinarySearchVariantOne.headBinarySearch(arr, arr.length, 8));
     }
 }
