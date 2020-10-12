@@ -8,6 +8,7 @@ package com.xsc.treestudy;
  * @date 2020/10/12 16:16
  */
 public class BinarySearchTree {
+    // 记录根节点
     private TreeNode treeNode;
 
     /**
@@ -15,7 +16,6 @@ public class BinarySearchTree {
      * @return TreeNode -> 找到的节点
      */
     private TreeNode findValue(int value) {
-        // 记录根节点
         TreeNode p = treeNode;
         // 如果节点不为空
         while (p != null) {
@@ -31,6 +31,39 @@ public class BinarySearchTree {
             }
         }
         return null;
+    }
+
+    /**
+     * 插入操作
+     *
+     * @param value 插入的值
+     */
+    private void insertValue(int value) {
+        // 如果树为空，那么插入的值作为根节点
+        if (treeNode == null) {
+            treeNode = new TreeNode(value);
+            return;
+        }
+        TreeNode p = treeNode;
+        // 如果存在树
+        while (p != null) {
+            // 比根节点大，那么插入右树为空的位置上，如果不为空，一直找
+            if (value > p.val) {
+                if (p.right == null) {
+                    p.right = new TreeNode(value);
+                    return;
+                }
+                p = p.right;
+                // 比根节点小，那么插入左树为空的位置上，如果不为空，一直找
+            } else {
+                if (p.left == null) {
+                    p.left = new TreeNode(value);
+                    return;
+                }
+                p = p.left;
+            }
+        }
+
     }
 
     static class TreeNode {
