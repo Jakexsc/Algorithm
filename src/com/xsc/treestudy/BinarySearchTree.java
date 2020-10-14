@@ -11,6 +11,10 @@ public class BinarySearchTree {
     // 记录根节点
     private TreeNode treeNode;
 
+    public BinarySearchTree(TreeNode treeNode) {
+        this.treeNode = treeNode;
+    }
+
     /**
      * @param value 要找的值
      * @return TreeNode -> 找到的节点
@@ -66,6 +70,72 @@ public class BinarySearchTree {
 
     }
 
+    /**
+     * 删除操作
+     *
+     * @param value 删除的值
+     */
+    private void deleteNode(int value) {
+        // 记录当前节点，初始化为根节点
+        TreeNode p = treeNode;
+        // 记录父节点
+        TreeNode pp = null;
+        // 寻找要删除的值
+        while (p != null && p.val != value) {
+            pp = p;
+            if (value > p.val) {
+                p = p.right;
+            } else {
+                p = p.left;
+            }
+        }
+        // 没找到直接返回
+        if (p == null) {
+            return;
+        }
+
+        // 如果要删除的节点存在左节点和右节点，从右树寻找最小值来替换
+        if (p.left != null && p.right != null) {
+            /// 记录p
+            TreeNode minP = p.right;
+            // p的父节点
+            TreeNode minPP = p;
+            while (minP.left != null) {
+                minPP = minP;
+                minP = minP.left;
+            }
+            // 把值替换
+            p.val = minP.val;
+            // 更新当前节点
+            p = minP;
+            // 更新父节点
+            pp = minPP;
+        }
+
+        // 记录子节点
+        TreeNode child;
+        //如果它存在左节点或右节点
+        if (p.left != null) {
+            child = p.left;
+        } else if (p.right != null) {
+            child = p.right;
+            // 不存在子节点
+        } else {
+            child = null;
+        }
+
+        // 删除的是根节点
+        if (pp == null) {
+            treeNode = child;
+            // 指向父节点指向它的子节点，如果它不存在子节点，那么直接删除
+        } else if (pp.left == p) {
+            pp.left = child;
+        } else {
+            pp.right = child;
+        }
+
+    }
+
     static class TreeNode {
         private int val;
         private TreeNode left;
@@ -74,5 +144,39 @@ public class BinarySearchTree {
         public TreeNode(int val) {
             this.val = val;
         }
+    }
+
+    public static void main(String[] args) {
+        TreeNode treeNode1 = new TreeNode(33);
+        TreeNode treeNode2 = new TreeNode(16);
+        TreeNode treeNode3 = new TreeNode(50);
+        TreeNode treeNode4 = new TreeNode(13);
+        TreeNode treeNode5 = new TreeNode(18);
+        TreeNode treeNode6 = new TreeNode(34);
+        TreeNode treeNode7 = new TreeNode(58);
+        TreeNode treeNode8 = new TreeNode(15);
+        TreeNode treeNode9 = new TreeNode(17);
+        TreeNode treeNode10 = new TreeNode(25);
+        TreeNode treeNode11 = new TreeNode(51);
+        TreeNode treeNode12 = new TreeNode(66);
+        TreeNode treeNode13 = new TreeNode(19);
+        TreeNode treeNode14 = new TreeNode(27);
+        TreeNode treeNode15 = new TreeNode(55);
+        treeNode1.left = treeNode2;
+        treeNode1.right = treeNode3;
+        treeNode2.left = treeNode4;
+        treeNode2.right = treeNode5;
+        treeNode3.left = treeNode6;
+        treeNode3.right = treeNode7;
+        treeNode4.right = treeNode8;
+        treeNode5.left = treeNode9;
+        treeNode5.right = treeNode10;
+        treeNode7.left = treeNode11;
+        treeNode7.right = treeNode12;
+        treeNode10.left = treeNode13;
+        treeNode10.right = treeNode14;
+        treeNode11.right = treeNode15;
+        BinarySearchTree binarySearchTree = new BinarySearchTree(treeNode1);
+        binarySearchTree.deleteNode(13);
     }
 }
