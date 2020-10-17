@@ -28,6 +28,24 @@ public class HeapSort {
     }
 
     /**
+     * 排序
+     *
+     * @param arr 数组
+     * @param n   最大下标
+     */
+    private void sort(int[] arr, int n) {
+        // 先建堆
+        buildHeap(arr, n);
+        int k = n;
+        while (k > 1) {
+            // 交换最后一个值和根节点
+            swap(arr, 1, k--);
+            // 然后一直寻找最大值
+            heapify(arr, k, 1);
+        }
+    }
+
+    /**
      * 插入操作 -> 自下往上的堆化
      *
      * @param data 插入的值
