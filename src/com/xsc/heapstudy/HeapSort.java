@@ -64,6 +64,18 @@ public class HeapSort {
     }
 
     /**
+     * 建堆操作
+     *
+     * @param arr 数组
+     * @param n   数组最大下标
+     */
+    private void buildHeap(int[] arr, int n) {
+        for (int i = n / 2; i >= 1; i--) {
+            heapify(arr, n, i);
+        }
+    }
+
+    /**
      * 堆化 -> 自上往下的堆化
      *
      * @param arr   堆
