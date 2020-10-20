@@ -3,7 +3,7 @@ package com.xsc.graphstudy;
 import java.util.LinkedList;
 
 /**
- * 无向图
+ * 无向图 -> 邻接表
  *
  * @author JakeXsc
  * @version 1.0
@@ -15,7 +15,7 @@ public class Graph {
      */
     private int n;
     /**
-     * 邻链表
+     * 顶点
      */
     private LinkedList<Integer>[] adj;
 
