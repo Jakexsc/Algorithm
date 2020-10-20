@@ -28,7 +28,7 @@ public class Graph {
     }
 
     /**
-     * 无向图添加
+     * 无向图添加边
      *
      * @param i 顶点
      * @param j 顶点
