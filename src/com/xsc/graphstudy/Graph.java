@@ -97,6 +97,12 @@ public class Graph {
         }
     }
 
+    /**
+     * 深度搜索入口
+     *
+     * @param s 开始的顶点
+     * @param t 结束的顶点
+     */
     private void dfs(int s, int t) {
         found = false;
         boolean[] visited = new boolean[n];
@@ -110,6 +116,12 @@ public class Graph {
         print(prev, s, t);
     }
 
+    /**
+     * @param w       相邻已访问的顶点
+     * @param t       结束的顶点
+     * @param visited 记录已访问的顶点
+     * @param prev    记录顶点路径
+     */
     private void recurDfs(int w, int t, boolean[] visited, int[] prev) {
         // 如果找到值
         if (found == true) {
