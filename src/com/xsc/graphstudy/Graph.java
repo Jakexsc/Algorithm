@@ -20,6 +20,11 @@ public class Graph {
      */
     private LinkedList<Integer>[] adj;
 
+    /**
+     * 标志是否找到值
+     */
+    private boolean found = false;
+
     public Graph(int n) {
         this.n = n;
         adj = new LinkedList[n];
@@ -92,6 +97,45 @@ public class Graph {
         }
     }
 
+    private void dfs(int s, int t) {
+        found = false;
+        boolean[] visited = new boolean[n];
+        // 路径
+        int[] prev = new int[n];
+        // 先遍历路径数组，默认值为-1
+        for (int i = 0; i < n; i++) {
+            prev[i] = -1;
+        }
+        recurDfs(s, t, visited, prev);
+        print(prev, s, t);
+    }
+
+    private void recurDfs(int w, int t, boolean[] visited, int[] prev) {
+        // 如果找到值
+        if (found == true) {
+            return;
+        }
+        // 设置已访问
+        visited[w] = true;
+        // 如果找到值
+        if (w == t) {
+            // 设置找到值
+            found = true;
+            return;
+        }
+        // 遍历顶点的相邻顶点
+        for (int i = 0; i < adj[w].size(); i++) {
+            int q = adj[w].get(i);
+            // 如果还没被访问
+            if (!visited[q]) {
+                // 如果顶点的上一个访问顶点
+                prev[q] = w;
+                // 继续遍历当前的顶点
+                recurDfs(q, t, visited, prev);
+            }
+        }
+    }
+
     /**
      * 递归打印路径，从后开始递归 顶点s -> 顶点t
      *
@@ -120,6 +164,8 @@ public class Graph {
         graph.addEdge(4, 6);
         graph.addEdge(5, 7);
         graph.addEdge(6, 7);
-        graph.bfs(0, 7);
+        graph.bfs(0, 6);
+        System.out.println();
+        graph.dfs(0, 6);
     }
 }
