@@ -10,18 +10,15 @@ package com.xsc.Leetcode;
  */
 public class ReverseList206 {
     public ListNode reverseList(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
-        ListNode reverseList = null;
-        while (head != null) {
-            ListNode listNode = reverseList;
-            ListNode next = head.next;
-            reverseList = head;
-            reverseList.next = listNode;
-            head = next;
-        }
-        return reverseList;
+        return prev;
     }
 
     public static void main(String[] args) {
