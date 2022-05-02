@@ -3,9 +3,10 @@ package com.xsc.Leetcode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.PriorityQueue;
 
 /**
+ * 遍历树，获取有序数组
+ *
  * @author Jakexsc
  * 2022/5/1
  */

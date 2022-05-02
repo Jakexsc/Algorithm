@@ -1,6 +1,8 @@
 package com.xsc.Leetcode;
 
 /**
+ * 删除某个链表节点
+ *
  * @author Jakexsc
  * 2022/5/1
  */
