@@ -25,5 +25,6 @@
 *.iml
 *.ipr
 /out/
+/output/
 
 
