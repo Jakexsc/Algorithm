@@ -1,5 +1,7 @@
 package com.xsc.sortstudy;
 
+import java.util.Arrays;
+
 /**
  * 冒泡排序
  *
@@ -39,5 +41,12 @@ public class BubbleSort {
                 break;
             }
         }
+    }
+
+    public static void main(String[] args) {
+        BubbleSort bubbleSort = new BubbleSort();
+        int[] arr = {2, 1};
+        bubbleSort.sort(arr, arr.length);
+        System.out.println(Arrays.toString(arr));
     }
 }

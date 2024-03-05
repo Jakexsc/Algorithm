@@ -11,7 +11,7 @@ import java.util.Random;
 public class QuickSortThree {
     static Random random = new Random();
 
-    public static void quickSortTwo(int[] arr, int p, int r) {
+    public static void quickSortThree(int[] arr, int p, int r) {
         /**
          * 递归终止条件
          */
@@ -21,9 +21,9 @@ public class QuickSortThree {
         // 获取pivot的下标
         int mid = randomPartition(arr, p, r);
         // 对左边的区域再进行分区
-        quickSortTwo(arr, p, mid - 1);
+        quickSortThree(arr, p, mid - 1);
         // 对右边的区域再进行分区
-        quickSortTwo(arr, mid + 1, r);
+        quickSortThree(arr, mid + 1, r);
     }
 
     private static int randomPartition(int[] arr, int p, int r) {
@@ -75,9 +75,20 @@ public class QuickSortThree {
         arr[j] = temp;
     }
 
+    public static final int tableSizeFor(int c) {
+        int n = c - 1;
+        n |= n >>> 1;
+        n |= n >>> 2;
+        n |= n >>> 4;
+        n |= n >>> 8;
+        n |= n >>> 16;
+        return (n < 0) ? 1 : (n >= 32) ? 32 : n + 1;
+    }
+
+
     public static void main(String[] args) {
-        int[] arr = new int[]{6, 11, 3, 9, 8};
-        quickSortTwo(arr, 0, arr.length - 1);
+        int[] arr = new int[]{1, 2, 3, 4};
+        quickSortThree(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
 }
